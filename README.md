@@ -73,3 +73,11 @@ Type help for list of commands
 ```
 Ahora podremos ir al disco K: y verificar que ha sido creado. Volveremos a abrir el archivo con notepad y veremos de nuevo un fichero en claro, mientras que el fichero realmente escrito está cifrado (y podemos comprobarlo del mismo modo que en el paso anterior)
 
+
+Escenario internet ( navegadores, correo, sincronizadores)
+-----------------------------------------------------------
+como SMB no tiene conocimiento del  proceso que solicita la lectura o escritura, la logica selectiva es viable pero demasiado lenta pues debe comprobar que proceso tiene abierto que fichero y eso consume muchos segundos, algo que no permite su uso en tiempo real. el ejemplo checkfiles.py hace uso de la libreria psutil para comprobar esto y consume unos 8 segundos
+herramientas como "handle" de windows tardan 6 segundos en decir que proceso tiene un fichero concreto abierto, por lo que es un enfoque imposible ese tipo de solucion
+
+
+
