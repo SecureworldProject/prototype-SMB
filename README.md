@@ -69,6 +69,6 @@ Impacket v0.9.21 - Copyright 2020 SecureAuth Corporation
 >Type help for list of commands
 ># use test
 ># put test.txt
-´´´
+```
 Ahora podremos ir al disco K: y verificar que ha sido creado. Volveremos a abrir el archivo con notepad y veremos de nuevo un fichero en claro, mientras que el fichero realmente escrito está cifrado (y podemos comprobarlo del mismo modo que en el paso anterior)
 
