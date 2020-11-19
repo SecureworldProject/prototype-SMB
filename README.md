@@ -63,12 +63,12 @@ Después lanzamos el cliente indicando la palabra share “test” y el usuario 
 una vez en línea de comando debemos indicar “use test” para ahorrarnos tener que indicar el share “test” en cada operación
 >py smbclient.py  -target-ip 127.0.0.1  joseja:cosa@test
 Impacket v0.9.21 - Copyright 2020 SecureAuth Corporation
-'''
+```
 >mi dialecto es  514
 >hola aqui estamos
 >Type help for list of commands
 ># use test
 ># put test.txt
-'''
+´´´
 Ahora podremos ir al disco K: y verificar que ha sido creado. Volveremos a abrir el archivo con notepad y veremos de nuevo un fichero en claro, mientras que el fichero realmente escrito está cifrado (y podemos comprobarlo del mismo modo que en el paso anterior)
 
