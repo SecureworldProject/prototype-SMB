@@ -26,7 +26,6 @@ Una vez en funcionamiento podremos pararlo con CTRL+C pero cuando montemos el di
 3) Montamos el disco K:
 
 >net use k: \\192.168.0.33\test /user:joseja cosa
-
 >(para desmontarlo al final basta con >net use k: /delete )
 
 4) copiar fichero a K
@@ -34,11 +33,11 @@ Una vez en funcionamiento podremos pararlo con CTRL+C pero cuando montemos el di
 Accedemos mediante el administrador de archivos al disco K: y copiamos en dicho disco un fichero que previamente hemos creado en otra carpeta 
 
 Pongo el contenido del fichero “test.txt”, el cual copiamos desde el administrador de archivos
-
->hola esto es un ejemplo
->de lo que se puede hacer con
->un SMB server
-
+```
+hola esto es un ejemplo
+de lo que se puede hacer con
+un SMB server
+```
 
 Una vez copiado en el disco K, podemos abrirlo haciendo doble clic en él
 
@@ -48,10 +47,11 @@ Una vez copiado en el disco K, podemos abrirlo haciendo doble clic en él
 
 Nos vamos a la carpeta TEST_folder , desde el disco C, es decir, al verdadero lugar donde están almacenados los datos del disco K: y abrimos el fichero test.txt a ver que contiene:
 Lo que veremos es un fichero “cifrado” con nuestro cifrado particular que intercambia las letras “e” y “a”
->hole asto as un ajamplo
->da lo qua sa puada hecar con
->un SMB sarvar
-
+```
+hole asto as un ajamplo
+da lo qua sa puada hecar con
+un SMB sarvar
+```
 Con esto queda comprobado que el fichero se ha escrito cifrado en el disco K: y que al leer desde dicho disco podemos descifrar en tiempo de lectura sin afectar a las aplicaciones.
 
 
@@ -61,14 +61,15 @@ Podemos hacer otra prueba usando el cliente de linea de comando smbclient.py
 Primero borramos el fichero test.txt del disco K:
 Después lanzamos el cliente indicando la palabra share “test” y el usuario (joseja) y clave (cosa)
 una vez en línea de comando debemos indicar “use test” para ahorrarnos tener que indicar el share “test” en cada operación
+```
 >py smbclient.py  -target-ip 127.0.0.1  joseja:cosa@test
 Impacket v0.9.21 - Copyright 2020 SecureAuth Corporation
-```
->mi dialecto es  514
->hola aqui estamos
->Type help for list of commands
-># use test
-># put test.txt
+
+mi dialecto es  514
+hola aqui estamos
+Type help for list of commands
+# use test
+# put test.txt
 ```
 Ahora podremos ir al disco K: y verificar que ha sido creado. Volveremos a abrir el archivo con notepad y veremos de nuevo un fichero en claro, mientras que el fichero realmente escrito está cifrado (y podemos comprobarlo del mismo modo que en el paso anterior)
 
